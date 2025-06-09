@@ -1,3 +1,9 @@
+"""
+Alunos: 
+Pedro Henrique Faria dos Santos Soares
+Mateus Afonso Miranda de Oliveira
+"""
+
 import csv
 from datetime import datetime
 
