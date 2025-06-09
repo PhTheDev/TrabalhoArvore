@@ -75,14 +75,21 @@ class ArvoreAVL:
         balance = self.balanceamento(raiz)
         
         # Casos de desbalanceamento
-        if balance > 1 and chave < raiz.esquerda.chave:
+        if balance > 1 and chave < raiz.esquerda.chave: 
+            # Caso LL (Left-Left): Desbalanceamento à esquerda + filho à esquerda
             return self.rotacao_direita(raiz)
+            
         if balance < -1 and chave > raiz.direita.chave:
+            # Caso RR (Right-Right): Desbalanceamento à direita + filho à direita
             return self.rotacao_esquerda(raiz)
+            
         if balance > 1 and chave > raiz.esquerda.chave:
+            # Caso LR (Left-Right): Desbalanceamento à esquerda + filho à direita
             raiz.esquerda = self.rotacao_esquerda(raiz.esquerda)
             return self.rotacao_direita(raiz)
+            
         if balance < -1 and chave < raiz.direita.chave:
+            # Caso RL (Right-Left): Desbalanceamento à direita + filho à esquerda
             raiz.direita = self.rotacao_direita(raiz.direita)
             return self.rotacao_esquerda(raiz)
             
